@@ -36,7 +36,3 @@ jobs:
           parameters: ./azuredeploy.parameters.json
           failOnStdErr: false
           deploymentMode: Complete
-      - name: Build and deploy
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: aktamosjsbattle
