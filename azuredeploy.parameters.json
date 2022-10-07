@@ -7,6 +7,9 @@
     },
     "sku": {
       "value": "F1"
+    },
+    "linuxFxVersion": {
+      "value": "NODE|12.22"
     }
   }
 }

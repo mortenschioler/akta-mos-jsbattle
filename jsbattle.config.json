@@ -7,11 +7,7 @@
             }
         ]
     },
-    "providers": [
-        {
-          "name": "github",
-          "clientID": "XXXXXXXXXXXXXXXXXXXX",
-          "clientSecret": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-        }
-    ]
+    "web": {
+        "port": "8080"
+    }
 }
