@@ -19,7 +19,15 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
+      - name: 'Check if infrastructure code has changed'
+        id: infrastructure-code
+        uses: technote-space/get-diff-action@v4.0.1
+        with:
+          PATTERNS: |
+            azuredeploy.bicep
+            azuredeploy.parameters.json
       - name: 'Deploy infrastructure'
+        if: steps.infrastructure-code.outputs.diff
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
@@ -28,13 +36,6 @@ jobs:
           parameters: ./azuredeploy.parameters.json
           failOnStdErr: false
           deploymentMode: Complete
-      # Building outside the container is necessary because java is required
-      - name: Set up Node.js version
-        uses: actions/setup-node@v3
-        with:
-          node-version: 12
-      - name: Insall node packages
-        run: npm install
       - name: Build and deploy
         uses: azure/webapps-deploy@v2
         with:

@@ -42,6 +42,12 @@ resource webApp 'Microsoft.Web/sites@2020-06-01' = {
     siteConfig: {
       linuxFxVersion: linuxFxVersion
       http20Enabled: http2
+      appSettings: [
+        {
+          name: 'SCM_DO_BUILD_DURING_DEPLOYMENT'
+          value: 'true'
+      }
+      ]
     }
     serverFarmId: appService.id
   }
