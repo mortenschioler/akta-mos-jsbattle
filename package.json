@@ -1,6 +1,6 @@
 {
   "scripts":{
-    "start": "jsbattle --config jsbattle.config.json start"
+    "start": "cat jsbattle.config.json | envsubst > jsbattle.config.resolved.json && jsbattle start --config jsbattle.config.resolved.json"
   },
   "dependencies": {
     "jsbattle": "^3.7.1"

@@ -5,9 +5,11 @@
                 "provider": "github",
                 "username": "mortenschioler"
             }
+        ],
+        "providers": [
         ]
     },
     "web": {
-        "port": "8080"
+        "port": "${PORT}"
     }
 }

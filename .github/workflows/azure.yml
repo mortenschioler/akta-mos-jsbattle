@@ -33,13 +33,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Deps
-        run: npm ci
-      - name: Zip
-        run: '(cd public && zip -r ../app.zip .)'
-      - name: Deploy Azure Web App
-        id: deploywebapp
-        uses: azure/CLI@v1
+      - name: Build and deploy
+        uses: azure/webapps-deploy@v2
         with:
-          azcliversion: 2.30.0
-          inlineScript: az webapp deploy --resource-group ${{ secrets.AZURE_RG }} --name aktamosjsbattle --src-path app.zip
+          app-name: aktamosjsbattle
