@@ -1,0 +1,17 @@
+{
+    "auth": {
+        "admins": [
+            {
+                "provider": "github",
+                "username": "mortenschioler"
+            }
+        ]
+    },
+    "providers": [
+        {
+          "name": "github",
+          "clientID": "XXXXXXXXXXXXXXXXXXXX",
+          "clientSecret": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+    ]
+}
