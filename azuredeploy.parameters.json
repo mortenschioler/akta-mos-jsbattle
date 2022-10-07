@@ -2,6 +2,24 @@
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "kind": {
+      "value": "linux"
+    },
+    "reserved": {
+      "value": true
+    },
+    "httpsOnly": {
+      "value": true
+    },
+    "arrAffinity": {
+      "value": true
+    },
+    "http2": {
+      "value": false
+    },
+    "appServiceName": {
+      "value": "AppServicePlan-aktamosjsbattle"
+    },
     "webAppName": {
       "value": "aktamosjsbattle"
     },
@@ -9,7 +27,7 @@
       "value": "F1"
     },
     "linuxFxVersion": {
-      "value": "NODE|12.22"
+      "value": "NODE|12.9"
     }
   }
 }
